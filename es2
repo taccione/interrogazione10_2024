@@ -1,0 +1,74 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class es2 {
+    public static void main(String[] args) throws Exception {
+        Scanner tastiera = new Scanner(System.in);
+
+        /* LocalDate date = LocalDate.now();
+        System.out.println(date);
+
+
+        System.out.println("Inserisci una data: ");
+        String giorno = tastiera.nextLine();
+
+        LocalDate data = LocalDate.parse(giorno);
+        System.out.println(data.plusDays(7));
+        System.out.println(data.getMonth());
+        System.out.println(data.format(DateTimeFormatter.ofPattern("MM")));
+
+         */
+
+
+        /*
+        LocalDate.parse trasforma una variabile di tipo stringa in una variabile di tipo LocalDate
+        data.plusDays somma n giorni alla data inserita
+        data.getMonth mette a video il mese inserito nella data sotto forma di stringa
+        data.format(DateTimeFormatter.ofPattern("MM")) stampa il mese sotto forma di LocalDate (numero)
+         */
+
+        int n1, n2;
+
+        System.out.println("Inserisci il primo numero: ");
+        n1 = tastiera.nextInt();
+        System.out.println("Inserisci il secondo numero: ");
+        n2 = tastiera.nextInt();
+
+        // System.out.println("Divisione: " + n1 / n2);
+
+        try {
+            Thread.sleep(2000);
+            System.out.println("Divisione: " + n1 / n2);
+        } catch (Exception e) {
+            Thread.sleep(2000);
+            System.out.println("Problema con l'input");
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("Inserisci un numero: ");
+        int num = tastiera.nextInt();
+
+        // num = metodoConEccezione(num);
+        // System.out.println(num);
+
+        try {
+            num = metodoConEccezione(num);
+            System.out.println("Numero raddoppiato: " + num);
+        } catch (Exception e) {
+            System.out.println("Errore");
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public static int metodoConEccezione(int a) throws Exception {
+        if (a > 0) {
+            Thread.sleep(2000);
+            return a * 2;
+        } else {
+            Thread.sleep(2000);
+            throw new Exception("a <= 0");
+        }
+    }
+}
